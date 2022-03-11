@@ -19,4 +19,4 @@ services:
     image: golang:latest
     volumes:
       - .:/src
-    command: go build
+    entrypoint: /src/scripts/build.sh
