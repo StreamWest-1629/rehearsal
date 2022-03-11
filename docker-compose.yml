@@ -9,12 +9,12 @@ services:
     image: golang:latest
     volumes:
       - .:/src
-    command: go mod init github.com/streamwest-1629/rehearsal
+    entrypoint: /src/scripts/init.sh
   tidy:
     image: golang:latest
     volumes:
       - .:/src
-    command: go mod tidy
+    entrypoint: /src/scripts/tidy.sh
   build:
     image: golang:latest
     volumes:
