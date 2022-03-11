@@ -12,6 +12,7 @@ dockerを用いてビルドする．
 | :-: | :-- |
 | `docker compose up version` | コンテナ内のGolangバージョンを確認する |
 | `docker compose up tidy` | `go mod tidy` 相当を実行する |
+| `docker compose up build` | `cmd/rehearsal` のビルドを実行し，`bin/rehearsal`として出力する |
 
 ## テンプレートとして使用したらはじめにすること
 1. **readme.mdの修正，やらないと許さない**
