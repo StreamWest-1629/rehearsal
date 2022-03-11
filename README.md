@@ -1,5 +1,5 @@
-# repo_template
-面倒だと思うその前にtemplateを作りました．
+# rehearsal
+これは指定されたプロセスの入出力を接続し，効率よくテストツールを作成するためのツールです．
 
 ## Issue作成（各リポジトリごとにうまい具合に設定してください）
 | Project \ Issue | improve | bugfix |
