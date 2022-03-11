@@ -1,30 +1,22 @@
 version: "3.0"
 services:
   check_version:
-    build:
-      context: .
-      dockerfile: build.dockerfile
+    image: golang:latest
     volumes:
       - .:/src
-    command: /src/scripts/check_version.sh
+    command: go version
   init:
-    build:
-      context: .
-      dockerfile: build.dockerfile
+    image: golang:latest
     volumes:
       - .:/src
-    command: /src/scripts/init.sh
+    command: go mod init github.com/streamwest-1629/rehearsal
   tidy:
-    build:
-      context: .
-      dockerfile: build.dockerfile
+    image: golang:latest
     volumes:
       - .:/src
-    command: /src/scripts/tidy.sh
+    command: go mod tidy
   build:
-    build:
-      context: .
-      dockerfile: build.dockerfile
+    image: golang:latest
     volumes:
       - .:/src
-    command: /src/scripts/build.sh
+    command: go build
