@@ -1,0 +1,7 @@
+* text=auto
+*.sh text eof=lf
+*.go text eof=lf
+*.md text eof=lf
+*.yml text eof=lf
+go.mod text eof=lf
+go.sum text eof=lf
