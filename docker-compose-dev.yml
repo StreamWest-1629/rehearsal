@@ -1,0 +1,8 @@
+version: "3.0"
+services:
+  build:
+    build:
+      context: .
+      dockerfile: devcontainer.Dockerfile
+    volumes:
+      - .:/src
