@@ -1,22 +1,30 @@
 version: "3.0"
 services:
   check_version:
-    image: golang:latest
+    build:
+      context: .
+      dockerfile: devcontainer.Dockerfile
     volumes:
       - .:/src
     command: go version
   init:
-    image: golang:latest
+    build:
+      context: .
+      dockerfile: devcontainer.Dockerfile
     volumes:
       - .:/src
     entrypoint: /src/scripts/init.sh
   tidy:
-    image: golang:latest
+    build:
+      context: .
+      dockerfile: devcontainer.Dockerfile
     volumes:
       - .:/src
     entrypoint: /src/scripts/tidy.sh
   build:
-    image: golang:latest
+    build:
+      context: .
+      dockerfile: devcontainer.Dockerfile
     volumes:
       - .:/src
     entrypoint: /src/scripts/build.sh
