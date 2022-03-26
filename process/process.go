@@ -8,11 +8,11 @@ import (
 
 type (
 	ProcIn interface {
-		SetWriter(w io.Writer) error
+		io.WriteCloser
 	}
 
 	ProcOut interface {
-		io.Writer
+		SetWriter(io.WriteCloser) error
 	}
 
 	ProcIO struct {
