@@ -19,4 +19,23 @@ todo: ここから解決策を出す
 また，各プロセスの入力へ渡す `io.EOF` もあれば，出力から発生する `io.EOF` を受け取ることが必要です．
 
 ## プロセスのライフタイム
+```mermaid
+graph TD;
+Define[プロセスの定義]
+Launch(プロセスの開始命令)
+Running[プロセスの実行]
+Interrupt(プロセスの中断命令)
+Resume(プロセスの再開命令)
+Kill(プロセスの終了命令)
+Finished[プロセスの終了]
 
+Define --> Launch
+Launch --> Running
+Running --> Kill
+Running --> Interrupt
+Running --> Finished
+Interrupt --> Resume
+Resume --> Running
+Interrupt --> Kill
+Kill --> Finished
+```
