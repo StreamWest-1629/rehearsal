@@ -39,3 +39,16 @@ Resume --> Running
 Interrupt --> Kill
 Kill --> Finished
 ```
+
+## 出力から生成されたものから次の入力までのフロー
+```mermaid
+graph TD;
+Out[出力元]
+Parallel(複数の `io.Writer` へ書き込み)
+Pipe(メモリパイプ)
+In[入力先]
+Out -->|Write|Parallel
+Parallel -->|Write|In
+Parallel -->|Write|Pipe
+Pipe -->|Copy|In
+```
